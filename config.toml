@@ -6,6 +6,13 @@ mouse = true
 color-modes = true
 lsp.display-inlay-hints = true
 
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+"'" = "'"
+'<' = '>'
 
 [keys.insert]
 f = { d = "normal_mode" }
