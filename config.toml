@@ -1,0 +1,18 @@
+theme = "onedark"
+
+[editor]
+line-number = "relative"
+mouse = true
+color-modes = true
+lsp.display-inlay-hints = true
+
+
+[keys.insert]
+f = { d = "normal_mode" }
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "read-only-indicator", "version-control", "file-modification-indicator"]
+right = ["diagnostics", "register", "total-line-numbers", "position-percentage", "file-encoding"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
