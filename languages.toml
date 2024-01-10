@@ -1,29 +1,21 @@
-[language-server.angular]
-command = "ngserver"
-args = [
-  "--stdio",
-  "--tsProbeLocations",
-  "$(npm -g root)",
-  "--ngProbeLocations",
-  "$(npm -g root)",
-]
+[language-server]
+ols      = { command = "ols", args = [] }
 
-[language-server.eslint]
-command = "vscode-eslint-language-server"
-args = ["--stdio"]
 
 [[language]]
-name = "typescript"
-formatter = { command = 'prettier', args = [
-  "--write",
-  "--parser",
-  "typescript",
-] }
-auto-format = true
-language-servers = ["typescript-language-server", "angular", "eslint"]
+name = "odin"
+#auto-format = false
+scope = "scope.odin" # "source.odin"
+file-types = ["odin"]
+roots = ["ols.json"]
+language-servers = [ "ols" ]
+comment-token = "//"
+indent = { tab-width = 2, unit = " " }
+injection-regex = "odin"
+formatter = { command = "odinfmt", args = [ "-stdin", "true" ] }
 
-[[language]]
-name = "html"
-formatter = { command = 'prettier', args = ["--write", "--parser", "html"] }
-auto-format = true
-language-servers = ["vscode-html-language-server", "angular"]
+
+[[grammar]]
+name = "odin"
+#source = { git = "https://github.com/ap29600/tree-sitter-odin", rev = "b219207e49ffca2952529d33e94ed63b1b75c4f1" }
+source = { git = "https://github.com/amaanq/tree-sitter-odin" }
